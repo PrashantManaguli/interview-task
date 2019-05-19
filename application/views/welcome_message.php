@@ -132,6 +132,7 @@ function validate_form(event){
 	var email=$("#user_email").val();
 	var user_name=$("#user_name").val();
 	var mobile=$("#user_mobile").val();
+    var amount=$('#price').val();
 	if(user_name.trim()==""){
 		alert("Please enter Username.");
 	    return false;
@@ -150,6 +151,10 @@ function validate_form(event){
 		alert("Please enter valid mobile number.");
 	    return false;
 	}
+    if(amount.trim()=="" || amount<=0){
+        alert("Please enter valid amount.");
+        return false;
+    }
   	myfile= $("#file_upload").val();
    var ext = myfile.split('.').pop();
    if(ext.trim()==""){
