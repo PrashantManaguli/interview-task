@@ -73,7 +73,7 @@
       <div class="form-group">
                         <label class="col-md-4 control-label">Captcha:</label>
                         <div class="col-md-6">
-                          <div class="g-recaptcha" data-sitekey="Add Your Site Key"></div>
+                          <div class="g-recaptcha" data-sitekey="6LeRSqQUAAAAAD7P0dJo4t9D0VDdWBCqqFGIXSGc"></div>
                     </div>
   </div>
   <div class="col-md-6" align="center"><button id="submit"  onclick="return validate_form()" class="btn btn-primary">Submit</button></div>
