@@ -78,7 +78,7 @@
                     </div>
                     <span style="color: red;" class="msg-error error"></span>
   </div>
-  <div class="col-md-6" align="center"><button id="rzp-button"  onclick="sush(event)" class="btn btn-primary">Submit</button></div>
+  <div class="col-md-6" align="center"><button id="rzp-button"  onclick="proccedToPayment(event)" class="btn btn-primary">Submit</button></div>
   
 </form>
 </body>
@@ -145,30 +145,29 @@ function validate_form(){
 </script>
 <script src="https://checkout.razorpay.com/v1/checkout.js"></script>
 <script>
-var options = {
-    "key": "rzp_test_ZfRCFUXqVZxZmv",
-    "amount": "29935",
-    "name": "Acme Corp",
-    "description": "A Wild Sheep Chase is the third novel by Japanese author Haruki Murakami",
-    "image": "http://example.com/your_logo.png",
-    "handler": function (response){
-      debugger
-        alert(response.razorpay_payment_id);
-    },
-    /**
-      * You can track the modal lifecycle by * adding the below code in your options
-      */
-    "modal": {
-        "ondismiss": function(){
-          debugger
-            console.log('Checkout form closed');
+  var amount = 0;
+ function proccedToPayment(e){
+  amount = $('#price').val();
+    var options = {
+        "key": "rzp_test_ZfRCFUXqVZxZmv",
+        "amount": amount,
+        "name": "Acme Corp",
+        "description": "A Wild Sheep Chase is the third novel by Japanese author Haruki Murakami",
+        "image": "http://example.com/your_logo.png",
+        "handler": function (response){
+            console.log(response.razorpay_payment_id);
+        },
+        /**
+          * You can track the modal lifecycle by * adding the below code in your options
+          */
+        "modal": {
+            "ondismiss": function(){
+                console.log('Checkout form closed');
+            }
         }
-    }
-};
-var rzp1 = new Razorpay(options);
- function sush(e){
+    };
+    var rzp1 = new Razorpay(options);
     rzp1.open();
-    debugger
     e.preventDefault();
 }
 </script>
