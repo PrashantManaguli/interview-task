@@ -24,63 +24,100 @@
 
 	
 <form  method="post" name="payuForm" enctype="multipart/form-data">
-
-	<div class="form-group row">
+<div class="container">
+  
+<div class = "row" align="center">
+	<div class="form-group col-md-12" align="center">
      	<label for="exampleInputEmail1"  class="col-md-6" align="center"><h2><b>Add User Details</b></h2></label>
      </div>
-    <div class="form-group row" align="right">
-      <label for="exampleInputEmail1"  class="col-md-2"><b>Username</b></label>
-      <input type="text" class="form-control col-md-4" name="firstname" id="user_name" value="" aria-describedby="emailHelp" placeholder="Enter Username">
+    <div class="form-group col-md-12" align="center">
+      <div class="row">
+        <div class="col-md-5"align="right">
+          <label for="exampleInputEmail1"><b>Username</b></label>
+        </div>
+        <div class="col-md-4" align="left">
+          <input type="text" class="form-control" name="firstname" id="user_name" value="" aria-describedby="emailHelp" placeholder="Enter Username">
+        </div>
+        
+      </div>
     </div>
-     <div class="form-group row" align="right">
-      <label for="exampleInputEmail1"  class="col-md-2"><b>Email address</b></label>
-      <input type="email" class="form-control col-md-4" name="email" id="user_email" value="" aria-describedby="emailHelp" placeholder="Enter Email address">
+     <div class="form-group col-md-12" align="center">
+         <div class="row ">
+          <div class="col-md-5"align="right">
+            <label for="exampleInputEmail1"><b>Email address</b></label>
+          </div>
+           <div class="col-md-4" align="left">
+          <input type="email" class="form-control" name="email" id="user_email" value="" aria-describedby="emailHelp" placeholder="Enter Email address">
+        </div>
+    </div>
     </div>	
-    <div class="form-group row" align="right">
-      <label for="exampleInputEmail1"  class="col-md-2"><b>Mobile</b></label>
-      <input type="text" class="form-control col-md-4" name="phone" id="user_mobile" value="" aria-describedby="emailHelp" placeholder="Enter Mobile">
+    <div class=" col-md-12" align="center">
+       <div class="row ">
+          <div class="col-md-5"align="right">   
+                <label for="exampleInputEmail1"><b>Mobile</b></label>
+            </div>
+            <div class="col-md-4" align="left">
+            <input type="text" class="form-control" name="phone" id="user_mobile" value="" aria-describedby="emailHelp" placeholder="Enter Mobile">
+        </div>
+        </div>
     </div>
 
-	  <div class="form-group row col-md-10" align="center">
-	  	<div class="custom-control custom-checkbox col-md-2"></div>
-	    <div class="custom-control custom-checkbox col-md-2">
+	  <div class="form-group col-md-12" align="center">
+	  	<div class="custom-control custom-checkbox col-md-5" align="right">&nbsp;</div>
+	    <div class="custom-control custom-checkbox col-md-2" align="left">
 	      <input type="checkbox" class="custom-control-input" value="100" id="customCheck1" onclick="calculate_amount()">
 	      <label class="custom-control-label" for="customCheck1">Editing(USD 100)</label>
 	    </div>
-	    <div class="custom-control custom-checkbox col-md-2">
+	    <div class="custom-control custom-checkbox col-md-2" align="left">
 	      <input type="checkbox" class="custom-control-input" value="200" id="customCheck2" onclick="calculate_amount()">
 	      <label class="custom-control-label" for="customCheck2">Proofreading(USD 200)</label>
 	    </div>
-	    <div class="custom-control custom-checkbox col-md-2">
+	    <div class="custom-control custom-checkbox col-md-2" align="left">
 	      <input type="checkbox" class="custom-control-input" value="500" id="customCheck3" onclick="calculate_amount()">
 	      <label class="custom-control-label" for="customCheck3">Formatting(USD 500)</label>
 	    </div>
 	  </div>
 
-	 <div class="form-group row" align="right">
-      <label for="exampleInputEmail1"  class="col-md-2"><b>Price USD</b></label>
-      <input type="text" class="form-control col-md-4" name="amount" id="price" value="" aria-describedby="emailHelp" placeholder="Enter Price">
+	 <div class="form-group col-md-12" align="center">
+        <div class="row ">
+          <div class="col-md-5"align="right"> 
+            <label for="exampleInputEmail1"  ><b>Price USD</b></label>
+        </div>
+        <div class="col-md-4" align="left">
+            <input type="text" class="form-control" name="amount" id="price" value="" aria-describedby="emailHelp" placeholder="Enter Price">
+        </div>
+    </div>
     </div>
 
-	<div class="form-group col-md-8" align="center">
-		<label for="exampleInputEmail1"  class="col-md-2"><b>Choose File</b></label>
-    <div class="input-group mb-3 col-md-5" >
-      <div class="custom-file ">
-        <input type="file" class="custom-file-input" id="file_upload" name="file_upload" >
-        <label class="custom-file-label" for="inputGroupFile02">Choose file</label>
+	<div class="form-group col-md-12" align="center">
+		  <div class="row ">
+          <div class="col-md-5" align="right"> 
+            <label for="exampleInputEmail1"  ><b>Choose File</b></label>
+          </div>
+            <div class="input-group mb-3 col-md-4" align="left">
+              <div class="custom-file ">
+                <label class="custom-file-label" for="inputGroupFile02">Choose file</label>
+                <input type="file" class="custom-file-input" id="file_upload" name="file_upload" >
+              </div>
+          </div>
       </div>
      <!-- onchange=" return check_file() -->
     </div>
-      <div class="form-group">
-                        <label class="col-md-4 control-label">Captcha:</label>
-                        <div class="col-md-6">
-                          <div id="recaptcha" class="g-recaptcha" data-sitekey="6LfvSqQUAAAAADNPqTuVPU6C1Jnyy6bChdIzabHI"></div>
-                    </div>
-                    <span style="color: red;" class="msg-error error"></span>
+      <div class="form-group col-md-12" align="center">
+         <div class="row ">
+          <div class="col-md-5" align="right"> 
+            <label for="exampleInputEmail1"  ><b>Captcha</b></label>
+        </div>
+        <div class="col-md-4" align="center">
+            <div id="recaptcha" class="g-recaptcha" data-sitekey="6LfvSqQUAAAAADNPqTuVPU6C1Jnyy6bChdIzabHI"></div>
+        </div>
+        <span style="color: red;" class="msg-error error"></span>
+        
+    </div><br>
+    <div class="col-md-8" align="center"><button id="rzp-button"  onclick=" return validate_form(event); " class="btn btn-primary">Submit</button></div>
   </div>
-  <div class="col-md-6" align="center"><button id="rzp-button"  onclick="proccedToPayment(event)" class="btn btn-primary">Submit</button></div>
-  
 </form>
+</div>
 </body>
 <script type="text/javascript">
 
@@ -91,7 +128,7 @@ function calculate_amount(){
 });
 	$("#price").val(amount);
 }
-function validate_form(){
+function validate_form(event){
 	var email=$("#user_email").val();
 	var user_name=$("#user_name").val();
 	var mobile=$("#user_mobile").val();
@@ -137,27 +174,30 @@ function validate_form(){
   } else {
     $( '.msg-error' ).text('');
     $captcha.removeClass( "error" );
-    
+    proccedToPayment(event)
   }
+ 
 }
 </script>
 <script src="https://checkout.razorpay.com/v1/checkout.js"></script>
 <script>
   var amount = 0;
  function proccedToPayment(e){
-  amount = parseInt($('#price').val())*100;
-    var options = {
-        "key": "rzp_test_ZfRCFUXqVZxZmv",
-        "amount": amount,
-        "name": "Five Feed",
-        "description": "Lorem Ipsum is simply dummy text of the printing and typesetting industry.",
-        "image": "https://www.fflspl.com/images/logo.png",
-        "handler": function (response){
-            console.log(response.razorpay_payment_id);
-        },
-    };
-    var rzp1 = new Razorpay(options);
-    rzp1.open();
-    e.preventDefault();
+  
+      amount = parseInt($('#price').val())*100;
+        var options = {
+            "key": "rzp_test_ZfRCFUXqVZxZmv",
+            "amount": amount,
+            "name": "Five Feed",
+            "description": "Lorem Ipsum is simply dummy text of the printing and typesetting industry.",
+            "image": "https://www.fflspl.com/images/logo.png",
+            "handler": function (response){
+                console.log(response.razorpay_payment_id);
+            },
+        };
+        var rzp1 = new Razorpay(options);
+        rzp1.open();
+        e.preventDefault();
+    
 }
 </script>
