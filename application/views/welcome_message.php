@@ -66,15 +66,15 @@
 	  	<div class="custom-control custom-checkbox col-md-5" align="right">&nbsp;</div>
 	    <div class="custom-control custom-checkbox col-md-2" align="left">
 	      <input type="checkbox" class="custom-control-input" value="100" id="customCheck1" onclick="calculate_amount()">
-	      <label class="custom-control-label" for="customCheck1">Editing(USD 100)</label>
+	      <label class="custom-control-label" for="customCheck1"><b>Editing</b>(USD $100)</label>
 	    </div>
 	    <div class="custom-control custom-checkbox col-md-2" align="left">
 	      <input type="checkbox" class="custom-control-input" value="200" id="customCheck2" onclick="calculate_amount()">
-	      <label class="custom-control-label" for="customCheck2">Proofreading(USD 200)</label>
+	      <label class="custom-control-label" for="customCheck2"><b>Proofreading</b>(USD $200)</label>
 	    </div>
 	    <div class="custom-control custom-checkbox col-md-2" align="left">
 	      <input type="checkbox" class="custom-control-input" value="500" id="customCheck3" onclick="calculate_amount()">
-	      <label class="custom-control-label" for="customCheck3">Formatting(USD 500)</label>
+	      <label class="custom-control-label" for="customCheck3"><b>Formatting</b>(USD $500)</label>
 	    </div>
 	  </div>
 
