@@ -136,7 +136,7 @@ function validate_form(){
   } else {
     $( '.msg-error' ).text('');
     $captcha.removeClass( "error" );
-    alert( 'reCAPTCHA marked' );
+    
   }
 }
 
