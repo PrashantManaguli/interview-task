@@ -20,7 +20,7 @@
 <script src="https://checkout.razorpay.com/v1/checkout.js"></script>
 <script>
 var options = {
-    "key": "rzp_test_32hsbEKriO6ai4",
+    "key": "rzp_test_ZfRCFUXqVZxZmv",
     "amount": "29935",
     "name": "Acme Corp",
     "description": "A Wild Sheep Chase is the third novel by Japanese author Haruki Murakami",
