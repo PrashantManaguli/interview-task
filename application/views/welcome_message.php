@@ -8,17 +8,21 @@
 	</style>
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
   <script src="https://js.instamojo.com/v1/checkout.js"></script>
-    <script>
-      function onButtonClick() {
-        debugger
-        Instamojo.open('https://www.instamojo.com/@prashantmanaguli/');
-      }
-    </script> 
+   <script src='https://www.google.com/recaptcha/api.js'></script>
+   <script src="https://www.google.com/recaptcha/api.js?render=6LeRSqQUAAAAAD7P0dJo4t9D0VDdWBCqqFGIXSGc"></script>
+  <script>
+  grecaptcha.ready(function() {
+      grecaptcha.execute('6LeRSqQUAAAAAD7P0dJo4t9D0VDdWBCqqFGIXSGc', {action: 'homepage'}).then(function(token) {
+         
+      });
+  });
+</script>
+    
 </head>
 <body>
 
 	
-<form action="<?php echo site_url('welcome/doPayment'); ?>" method="post" name="payuForm" enctype="multipart/form-data">
+<form action="<?php echo site_url('welcome/doPayment') ?>" method="post" name="payuForm" enctype="multipart/form-data">
 
 	<div class="form-group row">
      	<label for="exampleInputEmail1"  class="col-md-6" align="center"><h2><b>Add User Details</b></h2></label>
@@ -67,7 +71,7 @@
      <!-- onchange=" return check_file() -->
     </div>
   </div>
-  <div class="col-md-6" align="center"><button id="submit"   class="btn btn-primary">Submit</button></div>
+  <div class="col-md-6" align="center"><button id="submit"  onclick="return validate_form()" class="btn btn-primary">Submit</button></div>
   
 </form>
 </body>
@@ -102,20 +106,20 @@ function validate_form(){
 		alert("Please enter valid mobile number.");
 	    return false;
 	}
-  	// myfile= $("#file_upload").val();
-   // var ext = myfile.split('.').pop();
-   // if(ext.trim()==""){
-   // 	alert("Please select file to upload.");
-   // 	return false;
-   // }
-   // if(ext=="pdf" || ext=="docx" || ext=="doc"){
+  	myfile= $("#file_upload").val();
+   var ext = myfile.split('.').pop();
+   if(ext.trim()==""){
+   	alert("Please select file to upload.");
+   	return false;
+   }
+   if(ext=="pdf" || ext=="docx" || ext=="doc"){
    	
-   // 		return true;
-   // }else{
-   // 	alert(ext);
-   // 		alert("Only Pdf or Doc files are allowed.");
-   // 		return false;
-   // }
+   		return true;
+   }else{
+   	alert(ext);
+   		alert("Only Pdf or Doc files are allowed.");
+   		return false;
+   }
 }
 
 </script>
