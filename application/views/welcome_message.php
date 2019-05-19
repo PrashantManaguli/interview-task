@@ -8,11 +8,11 @@
 	</style>
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
   <script src="https://js.instamojo.com/v1/checkout.js"></script>
-   
-   <script src="https://www.google.com/recaptcha/api.js?render=6LeRSqQUAAAAAD7P0dJo4t9D0VDdWBCqqFGIXSGc"></script>
+   <script src='https://www.google.com/recaptcha/api.js'></script>
+  
   <script>
   grecaptcha.ready(function() {
-      grecaptcha.execute('6LeRSqQUAAAAAD7P0dJo4t9D0VDdWBCqqFGIXSGc', {action: 'homepage'}).then(function(token) {
+      grecaptcha.execute('6LfvSqQUAAAAADNPqTuVPU6C1Jnyy6bChdIzabHI', {action: 'homepage'}).then(function(token) {
          
       });
   });
@@ -73,8 +73,9 @@
       <div class="form-group">
                         <label class="col-md-4 control-label">Captcha:</label>
                         <div class="col-md-6">
-                          <div class="g-recaptcha" data-sitekey="6LeRSqQUAAAAAD7P0dJo4t9D0VDdWBCqqFGIXSGc"></div>
+                          <div id="recaptcha" class="g-recaptcha" data-sitekey="6LfvSqQUAAAAADNPqTuVPU6C1Jnyy6bChdIzabHI"></div>
                     </div>
+                    <span style="color: red;" class="msg-error error"></span>
   </div>
   <div class="col-md-6" align="center"><button id="submit"  onclick="return validate_form()" class="btn btn-primary">Submit</button></div>
   
@@ -117,14 +118,26 @@ function validate_form(){
    	alert("Please select file to upload.");
    	return false;
    }
-   if(ext=="pdf" || ext=="docx" || ext=="doc"){
+   if(ext!="pdf" && ext!="docx" && ext!="doc"){
    	
-   		return true;
-   }else{
-   	alert(ext);
-   		alert("Only Pdf or Doc files are allowed.");
-   		return false;
+   		 alert("Only Pdf or Doc files are allowed.");
+      return false;
    }
+  
+    var $captcha = $( '#recaptcha' ),
+      response = grecaptcha.getResponse();
+  
+  if (response.length === 0) {
+    $( '.msg-error').text( "reCAPTCHA is mandatory." );
+    if( !$captcha.hasClass( "error" ) ){
+      $captcha.addClass( "error" );
+      return false;
+    }
+  } else {
+    $( '.msg-error' ).text('');
+    $captcha.removeClass( "error" );
+    alert( 'reCAPTCHA marked' );
+  }
 }
 
 </script>
