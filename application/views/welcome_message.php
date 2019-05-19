@@ -11,7 +11,7 @@
     <script>
       function onButtonClick() {
         debugger
-        Instamojo.open('https://www.instamojo.com/@prashantmanaguli');
+        Instamojo.open('https://www.instamojo.com/@prashantmanaguli/');
       }
     </script> 
 </head>
