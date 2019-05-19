@@ -12,10 +12,10 @@
   
   <script>
  // grecaptcha.ready(function() {
-   //   grecaptcha.execute('6LfvSqQUAAAAADNPqTuVPU6C1Jnyy6bChdIzabHI', {action: 'homepage'}).then(function(token) {
+ //     grecaptcha.execute('6LfvSqQUAAAAADNPqTuVPU6C1Jnyy6bChdIzabHI', {action: 'homepage'}).then(function(token) {
          
-     // });
-  //});
+ //     });
+ //  });
 </script>
 
     
@@ -140,31 +140,21 @@ function validate_form(){
     
   }
 }
-
-
 </script>
 <script src="https://checkout.razorpay.com/v1/checkout.js"></script>
 <script>
   var amount = 0;
  function proccedToPayment(e){
-  amount = $('#price').val();
+  amount = parseInt($('#price').val())*100;
     var options = {
         "key": "rzp_test_ZfRCFUXqVZxZmv",
         "amount": amount,
-        "name": "Acme Corp",
-        "description": "A Wild Sheep Chase is the third novel by Japanese author Haruki Murakami",
-        "image": "http://example.com/your_logo.png",
+        "name": "Five Feed",
+        "description": "Lorem Ipsum is simply dummy text of the printing and typesetting industry.",
+        "image": "https://www.fflspl.com/images/logo.png",
         "handler": function (response){
             console.log(response.razorpay_payment_id);
         },
-        /**
-          * You can track the modal lifecycle by * adding the below code in your options
-          */
-        "modal": {
-            "ondismiss": function(){
-                console.log('Checkout form closed');
-            }
-        }
     };
     var rzp1 = new Razorpay(options);
     rzp1.open();
