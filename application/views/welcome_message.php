@@ -78,7 +78,7 @@
                     </div>
                     <span style="color: red;" class="msg-error error"></span>
   </div>
-  <div class="col-md-6" align="center"><button id="rzp-button"  onclick="sush()" class="btn btn-primary">Submit</button></div>
+  <div class="col-md-6" align="center"><button id="rzp-button"  onclick="sush(event)" class="btn btn-primary">Submit</button></div>
   
 </form>
 </body>
@@ -166,9 +166,9 @@ var options = {
     }
 };
 var rzp1 = new Razorpay(options);
- function sush(){
+ function sush(e){
     rzp1.open();
     debugger
-    preventDefault();
+    e.preventDefault();
 }
 </script>
