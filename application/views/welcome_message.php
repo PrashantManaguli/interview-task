@@ -18,17 +18,7 @@
 <body>
 
 	
-<form action="" method="post" name="payuForm" enctype="multipart/form-data">
-
-	  <!-- <input type="hidden" name="key" value="<?php echo $MERCHANT_KEY ?>" />
-      <input type="hidden" name="hash" value="<?php echo $hash ?>"/>
-      <input type="hidden" name="txnid" value="<?php echo $txnid ?>" />
-	  <input type="hidden" name="service_provider" value="payu_paisa" size="64" />
-	  <input type="hidden" name="productinfo" value="Payment Gateway"  />
-	  <input type="hidden" name="surl" value="<?php echo site_url('welcome/payment_success') ?>" size="64" />
-	  <input type="hidden" name="furl" value="<?php echo site_url('welcome/payment_failure') ?>" size="64" />
-	  
- -->
+<form action="<?php echo site_url('welcome/doPayment'); ?>" method="post" name="payuForm" enctype="multipart/form-data">
 
 	<div class="form-group row">
      	<label for="exampleInputEmail1"  class="col-md-6" align="center"><h2><b>Add User Details</b></h2></label>
@@ -77,7 +67,7 @@
      <!-- onchange=" return check_file() -->
     </div>
   </div>
-  <div class="col-md-6" align="center"><button id="submit"  onclick="onButtonClick()" class="btn btn-primary">Submit</button></div>
+  <div class="col-md-6" align="center"><button id="submit"   class="btn btn-primary">Submit</button></div>
   
 </form>
 </body>

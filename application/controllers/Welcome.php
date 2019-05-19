@@ -9,6 +9,7 @@ class Welcome extends CI_Controller {
         // $str=base_url()."vendor/instamojo/instamojo-php/src/Instamojo.php";
         // echo base_url()."vendor/instamojo/instamojo-php/src/Instamojo.php";
        // $api = new Instamojo\Instamojo('687e914c5168a5b9b40881601b3b26d0', 'cbbf3076e750fbc50a430b4fc869076e');
+        
     }
 	 
 	public function index()
@@ -20,6 +21,7 @@ class Welcome extends CI_Controller {
 	}
 
 	public function doPayment() {
+		$api = new Instamojo\Instamojo('687e914c5168a5b9b40881601b3b26d0', 'cbbf3076e750fbc50a430b4fc869076e');
 		try {
 		    $response = $api->paymentRequestCreate(array(
 		        "purpose" => "FIFA 16",
@@ -28,7 +30,7 @@ class Welcome extends CI_Controller {
 		        "email" => "foo@example.com",
 		        "redirect_url" => "https://interview-task-five-feed.herokuapp.com/payment_success"
 		        ));
-		    print_r($response);
+		    
 		}
 		catch (Exception $e) {
 		    print('Error: ' . $e->getMessage());
