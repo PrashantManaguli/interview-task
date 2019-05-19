@@ -21,7 +21,7 @@ class Welcome extends CI_Controller {
 	}
 
 	public function doPayment() {
-		$api = new Instamojo\Instamojo('687e914c5168a5b9b40881601b3b26d0', 'cbbf3076e750fbc50a430b4fc869076e','https://www.instamojo.com/@prashantmanaguli/');
+		$api = new Instamojo\Instamojo('687e914c5168a5b9b40881601b3b26d0', 'cbbf3076e750fbc50a430b4fc869076e');
 		try {
 		    $response = $api->paymentRequestCreate(array(
 		        "purpose" => "FIFA 16",
@@ -36,7 +36,7 @@ class Welcome extends CI_Controller {
 		    print('Error: ' . $e->getMessage());
 		}
 
-		
+		echo $response;
 		// echo "hi";
 		// die();
 	}

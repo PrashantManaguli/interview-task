@@ -17,12 +17,30 @@
       });
   });
 </script>
+<script src="https://checkout.razorpay.com/v1/checkout.js"></script>
+    <script>
+      var options = {
+        "key": "rzp_test_9bhKjJVNxvO3rB",
+        "subscription_id": "sub_8seKGNhVEOwnjj",
+        "name": "My Billing Label",
+        "description": "Auth txn for sub_8seKGNhVEOwnjj",
+        "handler": function (response){
+          alert(response.razorpay_payment_id);
+        }
+      };
+      var rzp1 = new Razorpay(options);
+      function sush(){
+        debugger
+        rzp1.open();
+      }
+
+    </script>
     
 </head>
 <body>
 
 	
-<form action="<?php echo site_url('welcome/doPayment') ?>" method="post" name="payuForm" enctype="multipart/form-data">
+<form  method="post" name="payuForm" enctype="multipart/form-data">
 
 	<div class="form-group row">
      	<label for="exampleInputEmail1"  class="col-md-6" align="center"><h2><b>Add User Details</b></h2></label>
@@ -77,7 +95,7 @@
                     </div>
                     <span style="color: red;" class="msg-error error"></span>
   </div>
-  <div class="col-md-6" align="center"><button id="submit"  onclick="return validate_form()" class="btn btn-primary">Submit</button></div>
+  <div class="col-md-6" align="center"><button id="rzp-button"  onclick="sush()" class="btn btn-primary">Submit</button></div>
   
 </form>
 </body>
