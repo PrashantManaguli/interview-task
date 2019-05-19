@@ -167,10 +167,10 @@ var options = {
     }
 };
 var rzp1 = new Razorpay(options);
+});
  function sush(){
     rzp1.open();
     debugger
     preventDefault();
 }
-});
 </script>
