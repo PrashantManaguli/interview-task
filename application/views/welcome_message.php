@@ -25,7 +25,6 @@ var options = {
     "name": "Acme Corp",
     "description": "A Wild Sheep Chase is the third novel by Japanese author  Haruki Murakami",
     "image": "https://example.com/your_logo",
-    "order_id": "order_9A33XWu170gUtm",
     "handler": function (response){
         alert(response.razorpay_payment_id);
     },
