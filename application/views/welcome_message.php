@@ -167,9 +167,10 @@ var options = {
     }
 };
 var rzp1 = new Razorpay(options);
-document.getElementById('rzp-button1').onclick = function(e){
+ function sush(){
     rzp1.open();
-    e.preventDefault();
+    debugger
+    preventDefault();
 }
 });
 </script>
