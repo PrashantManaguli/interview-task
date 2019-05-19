@@ -145,7 +145,6 @@ function validate_form(){
 </script>
 <script src="https://checkout.razorpay.com/v1/checkout.js"></script>
 <script>
-$(document).ready(function(){
 var options = {
     "key": "rzp_test_ZfRCFUXqVZxZmv",
     "amount": "29935",
@@ -167,7 +166,6 @@ var options = {
     }
 };
 var rzp1 = new Razorpay(options);
-});
  function sush(){
     rzp1.open();
     debugger
