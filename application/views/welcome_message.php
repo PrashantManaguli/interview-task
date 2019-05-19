@@ -20,24 +20,21 @@
 <script src="https://checkout.razorpay.com/v1/checkout.js"></script>
 <script>
 var options = {
-    "key": "rzp_test_fAA8ZBVYtgfzmR",
-    "amount": "29935", // INR 299.35
+    "key": "rzp_test_32hsbEKriO6ai4",
+    "amount": "29935",
     "name": "Acme Corp",
-    "description": "A Wild Sheep Chase is the third novel by Japanese author  Haruki Murakami",
-    "image": "https://example.com/your_logo",
-    "order_id": "order_9A33XWu170gUtm",
+    "description": "A Wild Sheep Chase is the third novel by Japanese author Haruki Murakami",
+    "image": "http://example.com/your_logo.png",
     "handler": function (response){
         alert(response.razorpay_payment_id);
     },
-    "prefill": {
-        "name": "Gaurav Kumar",
-        "email": "gaurav.kumar@example.com"
-    },
-    "notes": {
-        "address": "note value"
-    },
-    "theme": {
-        "color": "#F37254"
+    /**
+      * You can track the modal lifecycle by * adding the below code in your options
+      */
+    "modal": {
+        "ondismiss": function(){
+            console.log(‘Checkout form closed’);
+        }
     }
 };
 var rzp1 = new Razorpay(options);
