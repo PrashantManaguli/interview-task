@@ -147,7 +147,7 @@ function validate_form(event){
 		alert("Please enter mobile number.");
 	    return false;
 	}
-	if(mobile.length!=10){
+	if(mobile.trim().length!=10){
 		alert("Please enter valid mobile number.");
 	    return false;
 	}
