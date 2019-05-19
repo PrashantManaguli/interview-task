@@ -18,23 +18,35 @@
   });
 </script>
 <script src="https://checkout.razorpay.com/v1/checkout.js"></script>
-    <script>
-      var options = {
-        "key": "rzp_test_9bhKjJVNxvO3rB",
-        "subscription_id": "sub_8seKGNhVEOwnjj",
-        "name": "My Billing Label",
-        "description": "Auth txn for sub_8seKGNhVEOwnjj",
-        "handler": function (response){
-          alert(response.razorpay_payment_id);
-        }
-      };
-      var rzp1 = new Razorpay(options);
-      function sush(){
-        debugger
-        rzp1.open();
-      }
-
-    </script>
+<script>
+var options = {
+    "key": "rzp_test_fAA8ZBVYtgfzmR",
+    "amount": "29935", // INR 299.35
+    "name": "Acme Corp",
+    "description": "A Wild Sheep Chase is the third novel by Japanese author  Haruki Murakami",
+    "image": "https://example.com/your_logo",
+    "order_id": "order_9A33XWu170gUtm",
+    "handler": function (response){
+        alert(response.razorpay_payment_id);
+    },
+    "prefill": {
+        "name": "Gaurav Kumar",
+        "email": "gaurav.kumar@example.com"
+    },
+    "notes": {
+        "address": "note value"
+    },
+    "theme": {
+        "color": "#F37254"
+    }
+};
+var rzp1 = new Razorpay(options);
+function sush(e){
+  debugger
+    rzp1.open();
+    e.preventDefault();
+}
+</script>
     
 </head>
 <body>
